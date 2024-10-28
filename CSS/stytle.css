@@ -3,13 +3,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    
 }
 
 body {
-    font-family: Arial, sans-serif;
+    background-color: #E2E2E2;
     line-height: 1.6;
     color: #333;
-    background-color: #f5f5f5;
+   
 }
 
 .container {
@@ -20,13 +23,11 @@ body {
 
 /* Header */
 header {
-    background-color: #ffffff;
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: fixed;
+   
     width: 100%;
     top: 0;
-    z-index: 1000;
 }
 
 header .container {
@@ -60,7 +61,6 @@ nav ul li a:hover {
 .hero {
     padding: 120px 0 60px;
     text-align: center;
-    background-color: #ffffff;
 }
 
 .hero h1 {
@@ -171,7 +171,7 @@ nav ul li a:hover {
     color: #007bff;
 }
 
-/* PAGINA DE PRODUCTO */
+/* PAGINA DE PRODUCTO ////////////*/
 
 .container {
     width: 100%;
@@ -195,6 +195,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0em 0.7em 0em 0.7em;
 }
 
 nav {
@@ -209,17 +210,21 @@ nav a {
     font-weight: bold;
 }
 
-/* HERO SECTION STYLES */
 
-.title_menu_product {
+/* HERO SECTION STYLES MENU */
+
+#title_product_texture, .arrow_title_productt {
+    font-size: 2rem;
+}
+
+#title_product_texture, .title_menu_product {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin: 0.7rem;
 }
 
 .hero_menu {
-    background-color: #fff;
-    padding: 50px 0;
+    /* padding: 50px 0; */
     text-align: center;
 }
 
@@ -243,7 +248,26 @@ nav a {
 }
 
 /* PRODUCTS SECTION STYLES */
-.products {
+
+.card_product {
+    border: 2px solid #c7c7c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.card_product, .img_product {
+    width: 60%;
+}
+
+
+
+
+
+
+
+/* .products {
     background-color: #fff;
     padding: 50px 0;
 }
@@ -252,8 +276,19 @@ nav a {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}   
+}    */ 
+@media (min-width: 992px) {
+    .g-lg-3, .gx-lg-3 {
+        --bs-gutter-x: 0rem;
+    }
 
+    .g-2, .gy-2 {
+    --bs-gutter-y: 0rem; 
+    }
+.g-2, .gx-2 {
+    --bs-gutter-x: 0rem; 
+}
+}
 /* Media Queries */
 @media (max-width: 768px) {
     .hero h1 {
@@ -292,6 +327,8 @@ nav a {
         gap: 1rem;
     }
 }
+
+
 
 /* Animaciones */
 @keyframes fadeIn {
