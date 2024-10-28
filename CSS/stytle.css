@@ -185,6 +185,10 @@ nav ul li a:hover {
     height: auto;
 }
 
+.logo_product, img {
+   width: 10em;
+}
+
 /* HEADER STYLES */
 
 .container_product {
@@ -207,6 +211,12 @@ nav a {
 
 /* HERO SECTION STYLES */
 
+.title_menu_product {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .hero_menu {
     background-color: #fff;
     padding: 50px 0;
@@ -226,11 +236,7 @@ nav a {
     align-items: center;
 }
 
-.hero_title_menu {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
+
 
 .hero_description_menu p {
     margin-bottom: 10px;
@@ -302,3 +308,4 @@ nav a {
 .hero, .features, .contact {
     animation: fadeIn 1s ease-out;
 }
+
