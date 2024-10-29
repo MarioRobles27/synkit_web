@@ -196,7 +196,60 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 0em 0.7em 0em 0.7em;
+    
 }
+
+#title_product_texture {
+    display: flex;
+}
+
+  #flip_product {
+    height:50px;
+    overflow:hidden;
+    width: 5rem;
+  }
+  
+  #flip_product > div > div {
+    color:#fff;
+    padding:4px 12px;
+    height:45px;
+    margin-bottom:45px;
+    display:inline-block;
+  }
+  
+  #flip_product div:first-child {
+    animation: show 5s linear infinite;
+  }
+  
+  #flip_product div div {
+    background:#42c58a;
+  }
+  #flip_product div:first-child div {
+    background:#4ec7f3;
+  }
+  #flip_product div:last-child div {
+    background:#DC143C;
+  }
+  
+  @keyframes show {
+    0% {margin-top:-270px;}
+    5% {margin-top:-180px;}
+    33% {margin-top:-180px;}
+    38% {margin-top:-90px;}
+    66% {margin-top:-90px;}
+    71% {margin-top:0px;}
+    99.99% {margin-top:0px;}
+    100% {margin-top:-270px;}
+  }
+  
+  p {
+    position:fixed;
+    width:100%;
+    bottom:30px;
+    font-size:12px;
+    color:#999;
+    margin-top:200px;
+  }
 
 nav {
     display: flex;
@@ -218,7 +271,7 @@ nav a {
 }
 
 #title_product_texture, .title_menu_product {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
     margin: 0.7rem;
 }
@@ -249,23 +302,43 @@ nav a {
 
 /* PRODUCTS SECTION STYLES */
 
+
 .card_product {
     border: 2px solid #c7c7c7;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2em;
+    margin-top: 0rem;
 }
 
 .card_product, .img_product {
     width: 60%;
 }
 
+/* FOOTER */
 
+footer {
+    background-color: black;
+    padding: 1rem;
+}
 
+.footer_product, .footer_product_box {
+    display: flex;
+}
 
+.footer_product, .footer_product_box, 
+.footer_icons, .footer_icons_box, .img_icon_product  {
+   width: 3rem;
+   display: flex;
+   align-items: center;
+   margin: 0 1rem 0 1rem;
+}
 
-
+.footer_product, .footer_product_box, .footer_contact_product  {
+    font-size: 3rem;
+    color: #FF002A;
+ }
 
 /* .products {
     background-color: #fff;
