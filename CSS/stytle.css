@@ -178,12 +178,12 @@ nav ul li a:hover {
 
 /* PAGINA DE PRODUCTO ////////////*/
 
-.container {
+/* .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-}
+} */
 
 .logo_product {
     width: 100px;
@@ -213,7 +213,7 @@ nav ul li a:hover {
     height:50px;
     overflow:hidden;
     width: 5rem;
-    margin-bottom: 0.2em;
+    margin: 0 0 0 2vw;
   }
   
   #flip_product > div > div {
@@ -288,8 +288,87 @@ nav a {
     margin: 0.7rem 0 0 0;
 }
 
-.hero_menu {
-    /* padding: 50px 0; */
+/* MENU PRODUCTO */
+.burger {
+  position:fixed;
+  z-index:1;
+  top: 30px;
+  left:30px;
+  width: 50px;
+  height:35px;
+  transition: .3s;
+}
+/* Animate burger icon*/
+.burger.active {
+  transform: rotate(180deg);
+}
+
+.burger span{
+  position: absolute;
+  width:100%;
+  height:6px;
+  background: black;
+  left: 0;
+  
+}
+/* bars & animate bars(1,2,3)*/
+.burger span:nth-child(1){
+  top: 0;
+  transition: all .3s .3s;
+}
+.burger.active span:nth-child(1){
+  top:calc(50% - 3px);
+  transform: rotate(45deg);
+}
+
+.burger span:nth-child(2) {
+  top: calc(50% - 3px);
+  transition: opacity 1s
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger span:nth-child(3) {
+  bottom:0;
+  transition: all .3s .3s;
+}
+.burger.active span:nth-child(3){
+  
+  transform: rotate(-45deg);
+  bottom:calc(50% - 3px);
+  
+}
+/*menu list*/
+nav ul{
+  display: none;
+  position: absolute;
+  margin-top: 0;
+  width:100%;
+  background: lightgray;
+  height:600px;
+}
+
+nav ul li{
+  
+  margin-left: 30px;
+  line-height: 10px;
+  font-size: 20px;
+  margin-top:85px;
+  list-style: none;
+}
+nav li a{
+  color:black;
+  text-decoration: none;
+  transition: font-size .3s;
+}
+/*animate link*/
+nav li a:hover{
+  font-size: 25px;
+}
+
+/* .hero_menu {
+    
     text-align: center;
 }
 
@@ -310,12 +389,18 @@ nav a {
 
 .hero_description_menu p {
     margin-bottom: 10px;
-}
+} */
 
 /* PRODUCTS SECTION STYLES */
 
+.container_section_product {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-.card_product {
+.container_section_product > .row > .card_product {
     border: 2px solid #c7c7c7;
     display: flex;
     flex-direction: column;
@@ -324,9 +409,30 @@ nav a {
     margin-top: 0rem;
 }
 
-.card_product > .img_product {
-    width: 60%;
+/* .card_product {
+   
+    
+} */
+
+.container_section_product > .row 
+> .card_product > .img_product {
+    width: 80%;
 }
+
+.container_section_product > .row 
+> .card_product > .product_info > h3 {
+    font-size: 1.5vw;
+    color: #FF002A;
+}
+
+/* .card_product > .img_product {
+    width: 60%;
+} */
+
+/* .card_product > .product_info {
+    font-size: 2em;
+} */
+
 
 /* FOOTER */
 
