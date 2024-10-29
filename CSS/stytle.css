@@ -6,13 +6,18 @@
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     
+    
 }
 
 body {
-    background-color: #E2E2E2;
-    line-height: 1.6;
-    color: #333;
    
+    line-height: 1.6;
+    color: #333; 
+   
+}
+
+#background_product {
+    background-color: #D9D9D9;
 }
 
 .container {
@@ -220,8 +225,12 @@ nav ul li a:hover {
   #flip_product div:first-child {
     animation: show 5s linear infinite;
   }
+
+  #title_product_texture > #flip_product > div > div > .img_arrow_texture {
+    width: 2rem;
+  }
   
-  #flip_product div div {
+  /* #flip_product div div {
     background:#42c58a;
   }
   #flip_product div:first-child div {
@@ -229,7 +238,7 @@ nav ul li a:hover {
   }
   #flip_product div:last-child div {
     background:#DC143C;
-  }
+  } */
   
   @keyframes show {
     0% {margin-top:-270px;}
@@ -266,11 +275,11 @@ nav a {
 
 /* HERO SECTION STYLES MENU */
 
-#title_product_texture, .arrow_title_productt {
+#title_product_texture > .arrow_title_productt {
     font-size: 2rem;
 }
 
-#title_product_texture, .title_menu_product {
+#title_product_texture > .title_menu_product {
     font-size: 4rem;
     font-weight: bold;
     margin: 0.7rem;
@@ -312,7 +321,7 @@ nav a {
     margin-top: 0rem;
 }
 
-.card_product, .img_product {
+.card_product > .img_product {
     width: 60%;
 }
 
@@ -323,20 +332,28 @@ footer {
     padding: 1rem;
 }
 
-.footer_product, .footer_product_box {
+.footer_product > .footer_product_box {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.footer_product, .footer_product_box, 
-.footer_icons, .footer_icons_box, .img_icon_product  {
+.footer_product >.footer_product_box >
+.footer_icons > .footer_icons_box  {
    width: 3rem;
    display: flex;
    align-items: center;
+   
+}
+
+.footer_product >.footer_product_box >
+.footer_icons > .footer_icons_box > .img_icon_product  {
+   width: 2em;
    margin: 0 1rem 0 1rem;
 }
 
-.footer_product, .footer_product_box, .footer_contact_product  {
-    font-size: 3rem;
+.footer_product >.footer_product_box > .footer_contact_product > h3  {
+    font-size: 1rem;
     color: #FF002A;
  }
 
