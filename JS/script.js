@@ -75,6 +75,7 @@ if ($('#menu-lateral').length > 0) {
 }
 
 
+
 // LIBRERIA AOS ACTUALIZACIONES
 window.onload = function () {
     "use strict";
@@ -83,3 +84,4 @@ window.onload = function () {
     });
   };
 
+  

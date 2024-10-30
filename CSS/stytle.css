@@ -128,10 +128,11 @@ marquee {
  .aside-mobile ul li a {
     display: block;
     text-align: left;
-    font-size: 1vw;
+    font-weight: bold;
+    font-size: 1.2vw;
     color: #FF002A;
     text-transform: uppercase;
-    padding: 5px 0;
+    padding: 1vw 0;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
