@@ -40,8 +40,30 @@ header {
 }
 
 /* PAGINA DE LANDING */
-marquee {
-    font-size: 24px;
+
+@font-face {
+    font-family: Neue Regrade Extrabold;
+    src: url('Fonts\Neue Regrade Extrabold.otf');
+}
+
+.coming_soon {
+    position: relative;
+    font-family: Neue Regrade Extrabold;
+    width: 100%;
+    font-size: 32px;
+    margin-top: 35px;
+    margin-left: 10px;
+    color: red; /* Puedes cambiar el color del texto */
+    animation: parpadeo 0.8s infinite; /* Duración y repetición infinita */
+}
+
+@keyframes parpadeo {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
 .img-fondo {
@@ -49,10 +71,15 @@ marquee {
     position: relative;
 }
 
-.synkit-landing {
+.synkit {
+    font-family: Neue Regrade Extrabold;
     position: absolute;
-    font-size: 48px;
+    width: 100%;
+    font-size: 250px;
+    margin-left: 10px;
+    color: #000000;
 }
+
 
 /* PAGINA DE PRODUCTO ////////////*/
 
