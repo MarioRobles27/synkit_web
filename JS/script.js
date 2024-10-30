@@ -75,6 +75,11 @@ if ($('#menu-lateral').length > 0) {
 }
 
 
+
+
+
+// PDP PRODUCTO
+
 document.addEventListener("DOMContentLoaded", function() {
     gsap.registerPlugin(Flip);
 
@@ -100,6 +105,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
+
+
+
+
+
 
 
 // LIBRERIA AOS ACTUALIZACIONES
