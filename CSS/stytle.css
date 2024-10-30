@@ -320,19 +320,7 @@ marquee {
   }
   
 
-  
-  @keyframes show {
-    0% {margin-top:-270px;}
-    5% {margin-top:-160px;}
-    33% {margin-top:-160px;}
-    38% {margin-top:-75px;}
-    66% {margin-top:-75px;}
-    71% {margin-top:0px;}
-    99.99% {margin-top:0px;}
-    100% {margin-top:-270px;}
-  }
-  
-  p {
+p {
     position:fixed;
     width:100%;
     bottom:30px;
@@ -403,13 +391,104 @@ nav a {
     color: #FF002A;
 }
 
-/* .card_product > .img_product {
-    width: 60%;
-} */
 
-/* .card_product > .product_info {
-    font-size: 2em;
-} */
+/* PRODUCTO PDP */
+
+
+#title_pdp {
+    display: flex;
+    align-items: flex-end;
+    margin: 2vw 0 4vw 0;
+}
+
+  #flip_pdp {
+    height:50px;
+    overflow:hidden;
+    width: 5rem;
+    margin: 0 0 0 2vw;
+  }
+  
+  #flip_pdp > div > div {
+    color:#fff;
+    padding:4px 12px;
+    height:45px;
+    margin-bottom:45px;
+    display:inline-block;
+  }
+  
+  #flip_pdp div:first-child {
+    animation: show 5s linear infinite;
+  }
+
+  #title_pdp > #flip_pdp > div > div > .img_arrow_pdp {
+    width: 2rem;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 50px;
+ }
+  
+/* LIBRERIA PDP */
+
+
+.image-content {
+    width: 100%;
+    max-width: 400px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container::before {
+    float: left;
+    padding-top: 133.76623376623376%;
+    content: "";
+}
+
+.image-container::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 8px;
+    grid-template-areas:
+        "img-1 img-1 img-1"
+        "img-1 img-1 img-1"
+        "img-1 img-1 img-1"
+        "img-2 img-3 img-4";
+}
+
+.product {
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 1px dashed #fffce1;
+    will-change: transform;
+    background-color: #0e100f;
+}
+
+.product[data-grid="img-1"] { grid-area: img-1; }
+.product[data-grid="img-2"] { grid-area: img-2; }
+.product[data-grid="img-3"] { grid-area: img-3; }
+.product[data-grid="img-4"] { grid-area: img-4; }
+
+.product-1 { background-image: url("https://assets.codepen.io/16327/ui-flair-1.png"); }
+.product-2 { background-image: url("https://assets.codepen.io/16327/ui-flair-2.png"); }
+.product-3 { background-image: url("https://assets.codepen.io/16327/ui-flair-3.png"); }
+.product-4 { background-image: url("https://assets.codepen.io/16327/ui-flair-4.png"); }
 
 
 /* FOOTER */
@@ -445,16 +524,7 @@ footer {
     color: #FF002A;
  }
 
-/* .products {
-    background-color: #fff;
-    padding: 50px 0;
-}
 
-.product, .product_menu {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}    */ 
 @media (min-width: 992px) {
     .g-lg-3, .gx-lg-3 {
         --bs-gutter-x: 0rem;
@@ -523,4 +593,15 @@ footer {
 .hero, .features, .contact {
     animation: fadeIn 1s ease-out;
 }
+
+@keyframes show {
+    0% {margin-top:-270px;}
+    5% {margin-top:-160px;}
+    33% {margin-top:-160px;}
+    38% {margin-top:-75px;}
+    66% {margin-top:-75px;}
+    71% {margin-top:0px;}
+    99.99% {margin-top:0px;}
+    100% {margin-top:-270px;}
+  }
 
