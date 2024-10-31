@@ -110,7 +110,14 @@ header {
 .container {
     margin: 0 auto;
 }
+
+
+
 /* PAGINA DE PRODUCTO ////////////*/
+
+
+
+
 
 /* .container {
     width: 100%;
@@ -355,7 +362,6 @@ header {
   #flip_product {
     height:50px;
     overflow:hidden;
-    width: 5rem;
     margin: 0 0 0 2vw;
   }
   
@@ -409,6 +415,7 @@ nav a {
     font-size: 4rem;
     font-weight: bold;
     margin: 0.7rem 0 0 0;
+    font-family: Neue Regrade Extrabold; 
 }
 
 
@@ -460,7 +467,7 @@ nav a {
   #flip_pdp {
     height:50px;
     overflow:hidden;
-    width: 5rem;
+    /* width: 5rem; */
     margin: 0 0 0 2vw;
   }
   
@@ -485,6 +492,13 @@ nav a {
     height: 100px;
     background-color: blue;
     margin: 50px;
+ }
+
+ #title_pdp > .title_menu_pdp {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0.7rem 0 0 0;
+    font-family: Neue Regrade Extrabold;
  }
   
 /* LIBRERIA PDP */
