@@ -52,7 +52,6 @@ header {
     width: 100%;
     font-size: 32px;
     margin-top: 35px;
-    margin-left: 10px;
     color: #FF002A; /* Puedes cambiar el color del texto */
     animation: parpadeo 0.8s infinite; /* Duración y repetición infinita */
 }
@@ -88,7 +87,6 @@ header {
 
 #banner1 h1 {
     font-size: 7em;
-    padding-left: 0.25em;
     font-family: Neue Regrade Extrabold;
     color: #FF002A;
 }
