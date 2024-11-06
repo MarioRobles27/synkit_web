@@ -78,14 +78,10 @@ header {
 }
 
 #banner1 {
-    background-color: #000000;
     position: relative;
     display: flex;
     align-items:center;
     flex-direction: column;
-    left: -1000px; /* Inicialmente fuera de la vista hacia la izquierda */
-    opacity: 0; /* Inicialmente transparente */
-    transition: left 1s ease, opacity 1s ease; /* Transiciones para suavizar el efecto */
 }
 
 #banner1 h1 {
@@ -100,6 +96,7 @@ header {
     font-size: 24px;
     text-align: justify;
     margin-top: 30px;
+    color: #000000;
 }
 
 #banner1 div div div {
@@ -124,7 +121,7 @@ header {
   font-size: 24px;
   text-align: justify;
   margin-top: 30px;
-  color: #999;
+  color: #000000;
 }
 
 
