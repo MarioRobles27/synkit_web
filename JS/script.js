@@ -1,75 +1,67 @@
-// //animate burger icon
-// $(document).ready(function() {
-//     $(".burger").on("click",function() {
-//       $(".burger").toggleClass("active");
-      
-//     });
-//   });
-//   //slide menu list
-//   $(document).ready(function(){
-//     $(".burger").click(function(){
-//       $("ul").slideToggle("ul");
-      
-//     });
-//   });
 
-// MENÚ LATERAL
-// ------------
 function MenuLateral() {
   var dis = this;
   dis.menu = $('#menu-lateral');
   dis.btn = $('#btn-menu-lateral');
-  
-  // Determino si puedo hacer touch o no.
-  dis.touchsi = 'ontouchstart' in window;
 
-  // Variables para guardar eventos.
+  dis.touchsi = 'ontouchstart' in window;
   dis.empieza = dis.touchsi ? 'touchstart' : 'mousedown';
   dis.mientras = dis.touchsi ? 'touchmove' : 'mousemove';
   dis.termina = dis.touchsi ? 'touchend' : 'mouseup';
 
   dis.moviendo = false;
-  dis.puntoPartida;
-  dis.movido;
-  dis.pos;
+  dis.puntoPartida = 0;
+  dis.movido = 0;
+  dis.pos = 0;
   dis.abierto = false;
 
-  // Evento de inicio
-  dis.menu.on(dis.empieza, function(event) {
-      event.preventDefault();
+  // Abre o cierra el menú al hacer clic en el botón
+  dis.btn.on('click', function() {
+    if (dis.abierto) {
+      dis.menu.css('left', '-220px');
+    } else {
+      dis.menu.css('left', '0px');
+    }
+    dis.abierto = !dis.abierto;
+  });
 
-      dis.moviendo = true;
-      dis.puntoPartida = dis.touchsi ? event.originalEvent.touches[0].clientX : event.clientX;
-      dis.pos = -dis.menu.position().left;
+  // Evento de inicio de arrastre
+  dis.menu.on(dis.empieza, function(event) {
+    event.preventDefault();
+    dis.moviendo = true;
+    dis.puntoPartida = dis.touchsi ? event.originalEvent.touches[0].clientX : event.clientX;
+    dis.pos = -dis.menu.position().left;
   });
 
   // Evento de movimiento
   $(document).on(dis.mientras, function(event) {
+    if (dis.moviendo) {
       event.preventDefault();
-
-      if (dis.moviendo) {
-          dis.movido = (dis.touchsi ? event.originalEvent.touches[0].clientX : event.clientX) - dis.puntoPartida;
-          dis.menu.css('left', (dis.movido - dis.pos) + 'px');
-      }
+      dis.movido = (dis.touchsi ? event.originalEvent.touches[0].clientX : event.clientX) - dis.puntoPartida;
+      dis.menu.css('left', (dis.movido - dis.pos) + 'px');
+    }
   });
 
   // Evento de terminación
   $(document).on(dis.termina, function(event) {
-      dis.moviendo = false;
+    if (dis.moviendo) {
       event.preventDefault();
+      dis.moviendo = false;
 
       if (dis.movido > 50) {
-          dis.menu.css('left', '0px');
-          dis.abierto = true;
+        dis.menu.css('left', '0px');
+        dis.abierto = true;
       } else if (dis.movido < -50) {
-          dis.menu.css('left', '-220px');
-          dis.abierto = false;
+        dis.menu.css('left', '-220px');
+        dis.abierto = false;
       } else {
-          dis.menu.css('left', dis.abierto ? '0px' : '-220px');
+        dis.menu.css('left', dis.abierto ? '0px' : '-220px');
       }
+    }
   });
 }
 
+// Inicializa el menú lateral si existe el elemento #menu-lateral
 if ($('#menu-lateral').length > 0) {
   var lateral = new MenuLateral();
 }
@@ -90,83 +82,41 @@ $(document).ready(function () {
 });
 
 
-// PDP PRODUCTO
+$(document).ready(function() {
+  const images = $(".thumbnail").map(function() { return $(this).attr("src"); }).get();
+  let currentIndex = 0;
 
-
-// Inicializa Packery en el contenedor con clase .grid
-const $grid = $('.grid').packery({
-    itemSelector: '.grid-item',
-    columnWidth: 100
-  });
-  
-  // Convierte todos los elementos .grid-item en objetos draggables usando Draggabilly
-  $grid.find('.grid-item').each(function(i, gridItem) {
-    const draggie = new Draggabilly(gridItem);
-    // Vincula eventos de Draggabilly a Packery
-    $grid.packery('bindDraggabillyEvents', draggie);
+  // Abre el modal al hacer clic en la imagen principal
+  $("#mainImage").click(function() {
+    $("#modalImage").attr("src", $(this).attr("src"));
+    $("#imageModal").css("display", "flex");
+    currentIndex = images.indexOf($(this).attr("src"));
   });
 
-  
-  
+  // Función para actualizar la imagen en el modal
+  function updateModalImage(index) {
+    currentIndex = (index + images.length) % images.length;
+    $("#modalImage").attr("src", images[currentIndex]);
+  }
 
+  // Botones de control para el carrusel
+  $("#prev").click(function() {
+    updateModalImage(currentIndex - 1);
+  });
+  $("#next").click(function() {
+    updateModalImage(currentIndex + 1);
+  });
 
+  // Cerrar el modal
+  $(".close").click(function() {
+    $("#imageModal").css("display", "none");
+  });
 
-// var initPhotoSwipeFromDOM = function(gallerySelector) {
-//     var parseThumbnailElements = function(thumbnails) {
-//         var items = [];
-//         for (var i = 0; i < thumbnails.length; i++) {
-//             var figureEl = thumbnails[i];
-//             var linkEl = figureEl.children[0]; // <a> element
-//             var size = linkEl.getAttribute('data-size').split('x');
-
-//             var item = {
-//                 src: linkEl.getAttribute('href'),
-//                 w: parseInt(size[0], 10),
-//                 h: parseInt(size[1], 10),
-//                 title: figureEl.children.length > 1 ? figureEl.children[1].innerHTML : ''
-//             };
-
-//             items.push(item);
-//         }
-//         return items;
-//     };
-
-//     var openPhotoSwipe = function(index) {
-//         var pswpElement = document.querySelectorAll('.pswp')[0];
-//         var items = parseThumbnailElements(document.querySelectorAll(gallerySelector + ' figure'));
-//         var options = {
-//             index: index,
-//             bgOpacity: 0.85,
-//             showHideOpacity: true,
-//         };
-//         var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-//         gallery.init();
-//     };
-
-//     var galleryElements = document.querySelectorAll(gallerySelector + ' figure');
-//     for (var i = 0; i < galleryElements.length; i++) {
-//         galleryElements[i].onclick = function(event) {
-//             event.preventDefault();
-//             var index = Array.prototype.indexOf.call(galleryElements, this);
-//             openPhotoSwipe(index);
-//         };
-//     }
-// };
-
-
-
-
-
-
-
-
-
-// LIBRERIA AOS ACTUALIZACIONES
-window.onload = function () {
-    "use strict";
-    AOS.init({
-        duration: 1500,
-    });
-  };
-
+  // Cambiar imagen principal al hacer clic en miniatura
+  $(".thumbnail").click(function() {
+    let mainSrc = $("#mainImage").attr("src");
+    $("#mainImage").attr("src", $(this).attr("src"));
+    $(this).attr("src", mainSrc);
+  });
+});
   
