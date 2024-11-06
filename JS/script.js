@@ -74,6 +74,20 @@ if ($('#menu-lateral').length > 0) {
   var lateral = new MenuLateral();
 }
 
+$(document).ready(function () {
+  var banner2 = $("#banner2");
+  var currentPosition = banner2.offset().top - $(window).height();
+
+  $(window).scroll(function () {
+      if ($(window).scrollTop() > currentPosition && !banner2.hasClass("animated")) {
+          banner2.addClass("animated");
+          banner2.animate({
+              left: 0,
+              opacity: 1
+          }, 1000);
+      }
+  });
+});
 
 
 // PDP PRODUCTO
