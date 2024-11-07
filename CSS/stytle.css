@@ -22,7 +22,27 @@ body {
 }
 
 #background_landing {
-    background-color: rgb(199, 199, 199);
+  background: linear-gradient(108deg, #E2E2E2, #C4C4C4, #F2C900, #8E8E8E);
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 16s ease infinite;
+  -moz-animation: AnimationName 16s ease infinite;
+  animation: AnimationName 16s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
 }
 
 .container {
@@ -168,7 +188,7 @@ header {
     height: 100%;
     top: 0;
     left: -220px;
-    z-index: 2;
+    z-index: 3;
     background: #000000;
     display: block;
     transition: all 0.3s ease;
