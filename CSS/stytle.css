@@ -85,6 +85,7 @@ header {
     }
 }
 
+
 .img-fondo {
     position: absolute;
     z-index: 1;
@@ -95,6 +96,7 @@ header {
     position: relative;
     z-index: 2;
     width: 100%;
+    margin: 4vh 0 0 0;
 }
 
 #banner1 {
