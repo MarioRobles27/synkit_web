@@ -13,6 +13,7 @@ body {
    
     line-height: 1.6;
     color: #333; 
+    
    
 }
 
@@ -22,6 +23,14 @@ body {
 }
 
 #background_landing {
+  background: linear-gradient(108deg, #F2529D, #969696, #D2D8D9, #F23D5E);
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 16s ease infinite;
+  -moz-animation: AnimationName 16s ease infinite;
+  animation: AnimationName 16s ease infinite;
+}
+
+#background_product {
   background: linear-gradient(108deg, #F2529D, #969696, #D2D8D9, #F23D5E);
   background-size: 1000% 1000%;
   -webkit-animation: AnimationName 16s ease infinite;
@@ -381,7 +390,7 @@ p {
   }
 
   #title_product_texture > .title_menu_product {
-      font-size: 4rem;
+      font-size: clamp(1.8rem, 9vw, 5rem);
       font-weight: bold;
       margin: 0.7rem 0 0 0;
       font-family: Neue Regrade Extrabold; 
@@ -422,6 +431,9 @@ p {
 > .card_product > .product_info > h3 {
     font-size: 1.5vw;
     color: #FF002A;
+    font-size: clamp(1rem, 1vw, 5rem);
+    
+
 }
 
 
@@ -465,11 +477,21 @@ p {
  }
 
  #title_pdp > .title_menu_pdp {
-    font-size: 4rem;
+    font-size: clamp(1.8rem, 9vw, 5rem);
     font-weight: bold;
-    margin: 0.7rem 0 0 0;
+    margin: 1vh 0 0 2vh;
     font-family: Neue Regrade Extrabold;
- }
+    animation: colorBlink 2s ease-in-out infinite; /* Animación en bucle */ }
+
+    @keyframes colorBlink {
+      0%, 100% {
+          color: black; /* Color inicial */
+      }
+      50% {
+          color: red; /* Color intermedio */
+      }
+  }
+
   
 /* LIBRERIA PDP FotoSwipe */
 
@@ -478,20 +500,33 @@ p {
 
 
   .gallery {
-    text-align: center;
+    display: flex;
+    align-items: flex-start;
   }
+  
+  .images-container {
+    border: 2px solid #c7c7c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    margin-top: 0rem;
+}
+  
+  
   .main-image img {
     width: 400px;
     height: 400px;
     object-fit: cover;
     margin-bottom: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
   }
+  
   .thumbnails {
     display: flex;
     justify-content: center;
+    /* gap: 10px; */
   }
+  
   .thumbnail {
     width: 100px;
     height: 100px;
@@ -500,11 +535,25 @@ p {
     transition: transform 0.2s ease;
     padding: 0.2rem;
   }
+  
   .thumbnail:hover {
     transform: scale(1.1);
   }
-
-  /* Estilos del modal */
+  
+  .info_pdp {
+    max-width: 50vw;
+    border: 2px solid #c7c7c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em; 
+    margin-top: 0rem;
+    margin-top: 0 !important;
+  }
+  .info_pdp > h2 {
+    font-size: 1.7rem;
+  }
+  
   .modal {
     display: none;
     position: fixed;
@@ -517,31 +566,47 @@ p {
     align-items: center;
     z-index: 1000;
   }
+  .modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+  
   .modal-content {
     position: relative;
-  max-width: 50%;
-  max-height: 50%;
-  text-align: center;
-  background-color: transparent !important; /* Fuerza la transparencia */
-  border: none !important; /* Elimina el borde si es necesario */
-  box-shadow: none !important; /* Elimina cualquier sombra */
-    
+    max-width: 90%;
+    text-align: center;
+    background-color: transparent !important;
+    display: flex;
+    align-items: center;
   }
+  
   .modal-content img {
-    width: 50%; /* Tamaño reducido para las imágenes en el modal */
+    width: 50%;
     height: auto;
-    margin: 20px auto;
   }
 
-  /* Botones de control y cierre fuera de la imagen */
+  .modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+  
   .close {
     position: absolute;
-    top: 20px;
+    /* top: 12vw; */
     right: 30px;
     font-size: 32px;
     color: white;
     cursor: pointer;
   }
+  
   .carousel-control {
     cursor: pointer;
     position: absolute;
@@ -553,12 +618,16 @@ p {
     user-select: none;
     padding: 0 20px;
   }
+  
   .carousel-control.left {
     left: 20px;
   }
+  
   .carousel-control.right {
     right: 20px;
   }
+  
+  
 /* FOOTER */
 
 footer {
@@ -620,6 +689,9 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1rem;
     }
+    .info_pdp {
+      margin-top: 0; /* margen específico solo para pantallas grandes */
+  }
 }
 
 @media (max-width: 480px) {
@@ -642,6 +714,10 @@ footer {
     .social-media {
         gap: 1rem;
     }
+
+    .info_pdp h2 {
+      font-size: 1.2rem; /* Ajuste en pantallas móviles */
+  }
 }
 
 

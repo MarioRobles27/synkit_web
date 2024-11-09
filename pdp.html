@@ -46,43 +46,73 @@
     </header>
     <main>
 
-        <section id="title_pdp">
-            <!-- <div id=flip_pdp>
-                <div><div><img src="IMG/arrow-down-right.png" class="img_arrow_pdp"alt="arrow"></div></div>
-                <div><div><img src="IMG/arrow-down-right-grid.png" class="img_arrow_pdp" alt="arrow"></div></div>
-                <div><div><img src="IMG/arrow-down-right-red.png" class="img_arrow_pdp" alt="arrow"></div></div>
-              </div> -->
-            
-            <h1 class="title_menu_pdp">Street-smart</h1>
+        <section id="title_pdp" >
+            <h1 class="title_menu_pdp ">Street-smart</h1>
         </section>
 
-        <section>
-            <div>
-                
+        <div class="container">
+            <div class="row justify-content-center align-items-stretch">
+                <div class="col-md-8 col-lg-6 images-container d-flex flex-column">
+                    <div class="main-image">
+                        <img src="IMG/web_text_5.jpg" alt="Imagen principal" id="mainImage" class="img-fluid">
+                    </div>
+                    <div class="thumbnails d-flex flex-wrap">
+                        <img src="IMG/web_text_4.jpg" alt="Imagen 2" class="thumbnail img-fluid">
+                        <img src="IMG/web_text3.jpg" alt="Imagen 3" class="thumbnail img-fluid">
+                        <img src="IMG/web_text2.jpg" alt="Imagen 4" class="thumbnail img-fluid">
+                        <img src="IMG/texture.jpg" alt="Imagen 5" class="thumbnail img-fluid">
+                    </div>
+                </div>
+        
+                <div class="col-md-8 col-lg-6 info_pdp d-flex flex-column justify-content-between">
+                    <h2>El Papercut Texture Pack de Design Syndrome incluye 100 texturas de 
+                        alta definición en formato PNG, tanto en versión original como transparente, 
+                        ideal para sobreponer en proyectos de diseño. Este pack está pensado para mejorar
+                        posters, ilustraciones digitales y proyectos de branding, ofreciendo texturas de corte,
+                        arrugas y detalles artesanales. Es compatible con Photoshop, Illustrator, Figma, y 
+                        varias otras plataformas de diseño. Además, está disponible con licencias comercial 
+                        y extendida.</h2>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <div class="gallery">
-            <div class="main-image">
-              <img src="IMG/web_text_5.jpg" alt="Imagen principal" id="mainImage">
+        <!-- <div class="container">
+            <div class="row justify-content-center gallery">
+                <div class="col-md-8 col-lg-6 images-container">
+                    <div class="main-image">
+                        <img src="IMG/web_text_5.jpg" alt="Imagen principal" id="mainImage" class="img-fluid">
+                    </div>
+                    <div class="thumbnails d-flex flex-wrap">
+                        <img src="IMG/web_text_4.jpg" alt="Imagen 2" class="thumbnail img-fluid">
+                        <img src="IMG/web_text3.jpg" alt="Imagen 3" class="thumbnail img-fluid">
+                        <img src="IMG/web_text2.jpg" alt="Imagen 4" class="thumbnail img-fluid">
+                        <img src="IMG/texture.jpg" alt="Imagen 5" class="thumbnail img-fluid">
+                    </div>
+                </div>
+        
+                <div class="info_pdp col-md-8 col-lg-6 info_pdp p-3 p-lg-5">
+                    <h2>El Papercut Texture Pack de Design Syndrome incluye 100 texturas de 
+                        alta definición en formato PNG, tanto en versión original como transparente, 
+                        ideal para sobreponer en proyectos de diseño. Este pack está pensado para mejorar
+                        posters, ilustraciones digitales y proyectos de branding, ofreciendo texturas de corte,
+                        arrugas y detalles artesanales. Es compatible con Photoshop, Illustrator, Figma, y 
+                        varias otras plataformas de diseño. Además, está disponible con licencias comercial 
+                        y extendida.</h2>
+                </div>
+            </div> -->
+        
+            <!-- Modal -->
+            <div id="imageModal" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <span class="carousel-control left" id="prev">&#10094;</span>
+                    <img id="modalImage" src="" alt="Imagen en grande" class="img-fluid">
+                    <span class="carousel-control right" id="next">&#10095;</span>
+                </div>
             </div>
-            <div class="thumbnails"> 
-              <img src="IMG/web_text_4.jpg" alt="Imagen 2" class="thumbnail">
-              <img src="IMG/web_text3.jpg" alt="Imagen 3" class="thumbnail">
-              <img src="IMG/web_text2.jpg" alt="Imagen 4" class="thumbnail">
-              <img src="IMG/texture.jpg" alt="Imagen 5" class="thumbnail">
-            </div>
-          </div>
-          
-          <!-- Modal -->
-          <div id="imageModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <span class="carousel-control left" id="prev">&#10094;</span>
-              <img id="modalImage" src="" alt="Imagen en grande">
-              <span class="carousel-control right" id="next">&#10095;</span>
-            </div>
-          </div>
+        </div>
+        
        
        
     </main>

@@ -66,6 +66,9 @@ if ($('#menu-lateral').length > 0) {
   var lateral = new MenuLateral();
 }
 
+
+
+
 $(document).ready(function() {
   const images = $(".thumbnail").map(function() { return $(this).attr("src"); }).get();
   let currentIndex = 0;
@@ -77,13 +80,13 @@ $(document).ready(function() {
     currentIndex = images.indexOf($(this).attr("src"));
   });
 
-  // Función para actualizar la imagen en el modal
+  // Actualiza la imagen en el modal
   function updateModalImage(index) {
     currentIndex = (index + images.length) % images.length;
     $("#modalImage").attr("src", images[currentIndex]);
   }
 
-  // Botones de control para el carrusel
+  // Navega por las imágenes en el modal
   $("#prev").click(function() {
     updateModalImage(currentIndex - 1);
   });
@@ -91,17 +94,23 @@ $(document).ready(function() {
     updateModalImage(currentIndex + 1);
   });
 
-  // Cerrar el modal
+  // Cierra el modal al hacer clic en la capa de fondo
+  $(".modal-background").click(function() {
+    $("#imageModal").css("display", "none");
+  });
+
+  // Cierra el modal con el botón de cerrar
   $(".close").click(function() {
     $("#imageModal").css("display", "none");
   });
 
-  // Cambiar imagen principal al hacer clic en miniatura
+  // Cambia la imagen principal al hacer clic en una miniatura
   $(".thumbnail").click(function() {
-    let mainSrc = $("#mainImage").attr("src");
     $("#mainImage").attr("src", $(this).attr("src"));
-    $(this).attr("src", mainSrc);
   });
 });
+
+
+
 
 
