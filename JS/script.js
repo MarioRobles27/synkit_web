@@ -111,6 +111,32 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+  const texto = "El Papercut Texture Pack de Design Syndrome incluye 100 texturas de alta definición en formato PNG, tanto en versión original como transparente, ideal para sobreponer en proyectos de diseño. Este pack está pensado para mejorar posters, ilustraciones digitales y proyectos de branding, ofreciendo texturas de corte, arrugas y detalles artesanales. Es compatible con Photoshop, Illustrator, Figma, y varias otras plataformas de diseño. Además, está disponible con licencias comercial y extendida.";
+  const velocidad = 30;
+  let indice = 0;
+
+  function escribirTexto() {
+      if (indice < texto.length) {
+          $('#texto').append(texto.charAt(indice));
+          indice++;
+          
+          // Mueve el cursor al final del texto en cada iteración
+          $('.cursor').appendTo('#texto');
+          
+          setTimeout(escribirTexto, velocidad);
+      }
+  }
+
+  // Inicia el efecto de escritura
+  escribirTexto();
+});
 
 
+window.onload = function () {
+  "use strict";
+  AOS.init({
+      duration: 1500,
+  });
+};
 

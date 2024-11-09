@@ -430,10 +430,32 @@ p {
 }
 
 .container_section_product > .row 
-> .card_product > .product_info > h3 {
+> .card_product > .product_info > ul   {
+  padding-left: 0; /* Opcional: elimina el espacio de la izquierda */
+    text-decoration: none;
+    list-style-type: none; /* Quita los puntos */
+    
+}
+
+.container_section_product > .row 
+> .card_product > .product_info > ul > li  {
     font-size: 1.5vw;
     color: #FF002A;
     font-size: clamp(1rem, 1vw, 5rem);
+    text-decoration: none;
+    list-style-type: none; /* Quita los puntos */
+    
+}
+
+.container_section_product > .row 
+> .card_product > .product_info > ul > li > a {
+    font-size: 1.5vw;
+    color: #FF002A;
+    font-size: clamp(1rem, 1vw, 5rem);
+    text-decoration: none;
+    list-style-type: none; /* Quita los puntos */
+    
+    
     
 
 }
@@ -554,7 +576,20 @@ p {
   }
   .info_pdp > h2 {
     font-size: 1.7rem;
+    display: inline; /* Para que el cursor quede al final del texto */
   }
+
+  /* Estilo del cursor parpadeante */
+  .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: parpadeo 0.6s infinite;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
   
   .modal {
     display: none;
