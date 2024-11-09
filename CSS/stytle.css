@@ -22,7 +22,7 @@ body {
 }
 
 #background_landing {
-  background: linear-gradient(108deg, #E2E2E2, #C4C4C4, #F2C900, #8E8E8E);
+  background: linear-gradient(108deg, #F2529D, #969696, #D2D8D9, #F23D5E);
   background-size: 1000% 1000%;
   -webkit-animation: AnimationName 16s ease infinite;
   -moz-animation: AnimationName 16s ease infinite;
@@ -144,6 +144,21 @@ header {
   color: #000000;
 }
 
+.logoPequeno {
+  width: 20em;
+  margin-top: 5em;
+  transform-style: preserve-3d;
+  animation: rotar3D 3s linear infinite;
+}
+
+@keyframes rotar3D {
+  from {
+      transform: rotateY(0deg);
+  }
+  to {
+      transform: rotateY(360deg);
+  }
+}
 
 /* PAGINA DE PRODUCTO ////////////*/
 
