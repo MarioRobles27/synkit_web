@@ -116,7 +116,7 @@ header {
 }
 
 #banner1 h1 {
-    font-size: 7em;
+    font-size: 5vw;
     font-family: Neue Regrade Extrabold;
     color: #FF002A;
 }
@@ -124,7 +124,7 @@ header {
 #banner1 p {
     position: relative;
     padding-left: 1em;
-    font-size: 24px;
+    font-size: 1.5vw;
     text-align: justify;
     margin-top: 30px;
     color: #000000;
