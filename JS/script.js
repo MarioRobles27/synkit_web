@@ -1,3 +1,11 @@
+function toggleStyle(element) {
+  // Quitamos la clase 'active' de todos los elementos para que solo uno esté activo
+  document.querySelectorAll('.clickable-title').forEach(el => el.classList.remove('active'));
+
+  // Agregamos la clase 'active' al elemento actual
+  element.classList.add('active');
+}
+
 
 function MenuLateral() {
   var dis = this;
@@ -133,6 +141,10 @@ $(document).ready(function() {
 });
 
 
+
+
+
+
 window.onload = function () {
   "use strict";
   AOS.init({
@@ -140,3 +152,71 @@ window.onload = function () {
   });
 };
 
+
+particlesJS('particles-js', {
+  particles: {
+    number: {
+      value: 50, // Cantidad de partículas
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#ffffff" // Color de las partículas (blanco)
+    },
+    shape: {
+      type: "circle",
+      stroke: {
+        width: 0,
+        color: "#000000"
+      }
+    },
+    opacity: {
+      value: 0.3, // Opacidad baja para un efecto discreto
+      random: false,
+      anim: {
+        enable: false
+      }
+    },
+    size: {
+      value: 3, // Tamaño pequeño de partículas
+      random: true,
+      anim: {
+        enable: false
+      }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.2,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 1, // Movimiento suave y lento
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false
+      }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: false
+      },
+      onclick: {
+        enable: false
+      },
+      resize: true
+    }
+  },
+  retina_detect: true
+});

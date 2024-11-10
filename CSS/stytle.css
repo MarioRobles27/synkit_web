@@ -176,14 +176,6 @@ header {
 
 
 
-
-/* .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-} */
-
 .logo_product {
     width: 100px;
     height: auto;
@@ -201,7 +193,33 @@ header {
     align-items: center;
     padding: 0em 0.7em 0em 0.7em;
     
-    
+}
+
+.clickable-title {
+  position: relative;
+  font-weight: normal;
+  text-decoration: none;
+  color: #000; /* Ajusta el color según tus necesidades */
+  transition: font-weight 0.3s ease;
+}
+
+.clickable-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Ajusta la posición vertical de la línea de subrayado */
+  width: 0;
+  height: 2px; /* Grosor de la línea de subrayado */
+  background-color: #000; /* Color de la línea de subrayado */
+  transition: width 0.3s ease;
+}
+
+.clickable-title:hover {
+  font-weight: bold; /* Pone el texto en negrita al pasar el ratón */
+}
+
+.clickable-title:hover::after {
+  width: 100%; /* Anima la línea de subrayado de izquierda a derecha */
 }
 
 /* MENU PRODUCTO */
@@ -251,7 +269,7 @@ header {
     display: block;
     text-align: left;
     font-weight: bold;
-    font-size: 1.2vw;
+    font-size: clamp(1rem, 1vw, 5rem);
     color: #FF002A;
     text-transform: uppercase;
     padding: 1vw 0;
@@ -358,7 +376,7 @@ header {
   }
 
   #title_product_texture > #flip_product > div > div > .img_arrow_texture {
-    width: 2rem;
+    width: clamp(20px, 2rem, 50px);
   }
   
 
@@ -455,10 +473,35 @@ p {
     text-decoration: none;
     list-style-type: none; /* Quita los puntos */
     
-    
-    
-
 }
+
+.animated-text {
+  position: relative;
+  font-weight: normal;
+  text-decoration: none;
+  color: #000;
+  transition: font-weight 0.3s ease; /* Animación de negrita */
+}
+
+.animated-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Ajusta la posición de la línea */
+  width: 0;
+  height: 2px; /* Grosor de la línea de subrayado */
+  background-color: #000;
+  transition: width 0.3s ease; /* Animación del subrayado */
+}
+
+.animated-text:hover {
+  font-weight: bold; /* Activa la negrita al pasar el ratón */
+}
+
+.animated-text:hover::after {
+  width: 100%; /* Hace que la línea de subrayado crezca de izquierda a derecha */
+}
+
 
 
 /* PRODUCTO PDP */
@@ -544,6 +587,19 @@ p {
     object-fit: cover;
     margin-bottom: 20px;
   }
+
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Asegura que las partículas estén en el fondo */
+    background-color: #3a3a3a; /* Fondo gris */
+    pointer-events: none; /* Evita interferencia con el resto de la página */
+}
+
+
   
   .thumbnails {
     display: flex;
@@ -577,6 +633,7 @@ p {
   .info_pdp > h2 {
     font-size: 1.7rem;
     display: inline; /* Para que el cursor quede al final del texto */
+    color: #a4a4a4;
   }
 
   /* Estilo del cursor parpadeante */
@@ -688,7 +745,7 @@ footer {
 }
 
 .footer_product >.footer_product_box >
-.footer_icons > .footer_icons_box > .img_icon_product  {
+.footer_icons > .footer_icons_box > a > .img_icon_product  {
    width: 2em;
    margin: 0 1rem 0 1rem;
 }
@@ -699,7 +756,9 @@ footer {
  }
 
 
-@media (min-width: 992px) {
+
+
+ @media (min-width: 992px) {
     .g-lg-3, .gx-lg-3 {
         --bs-gutter-x: 0rem;
     }
