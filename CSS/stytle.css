@@ -1,145 +1,150 @@
 /* Reset y estilos generales */
+/* Reseteo base, evitando conflictos con Bootstrap */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    
-    
+  box-sizing: border-box; /* Para evitar problemas de cálculo de ancho/alto */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
 }
 
-body {
-   
-    line-height: 1.6;
-    color: #333; 
-    
-   
+/* Si quieres resetear algo más a todo el documento, es mejor hacerlo aquí */
+html, body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
 }
 
+/* Elimina la redefinición de .container para que no choque con Bootstrap */
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+} */
+
+/* Si necesitabas un contenedor con un ancho máximo, puedes crear tu propia clase
+ (por ejemplo, .container-custom) y aplicarla en tu HTML, sin pisar la de Bootstrap:
+
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+*/
+
+/* FONDO DEL PRODUCTO */
 #background_product {
-    background-color: #d9d9d9;
-
+  background-color: #d9d9d9;
 }
 
+/* FONDOS CON ANIMACIÓN GRADIENTE */
 #background_landing {
-  background: linear-gradient(108deg, #F2529D, #969696, #D2D8D9, #F23D5E);
-  background-size: 1000% 1000%;
-  -webkit-animation: AnimationName 16s ease infinite;
-  -moz-animation: AnimationName 16s ease infinite;
-  animation: AnimationName 16s ease infinite;
+background: linear-gradient(108deg, #F2529D, #969696, #D2D8D9, #F23D5E);
+background-size: 1000% 1000%;
+-webkit-animation: AnimationName 16s ease infinite;
+-moz-animation: AnimationName 16s ease infinite;
+animation: AnimationName 16s ease infinite;
 }
 
 #background_product {
-  background: linear-gradient(108deg, #F2529D, #969696, #D2D8D9, #F23D5E);
-  background-size: 1000% 1000%;
-  -webkit-animation: AnimationName 16s ease infinite;
-  -moz-animation: AnimationName 16s ease infinite;
-  animation: AnimationName 16s ease infinite;
+background: linear-gradient(108deg, #F2529D, #969696, #D2D8D9, #F23D5E);
+background-size: 1000% 1000%;
+-webkit-animation: AnimationName 16s ease infinite;
+-moz-animation: AnimationName 16s ease infinite;
+animation: AnimationName 16s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
+0%{background-position:49% 0%}
+50%{background-position:52% 100%}
+100%{background-position:49% 0%}
 }
 @-moz-keyframes AnimationName {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
+0%{background-position:49% 0%}
+50%{background-position:52% 100%}
+100%{background-position:49% 0%}
 }
 @keyframes AnimationName {
-  0%{background-position:49% 0%}
-  50%{background-position:52% 100%}
-  100%{background-position:49% 0%}
+0%{background-position:49% 0%}
+50%{background-position:52% 100%}
+100%{background-position:49% 0%}
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
+/* HEADER */
 header {
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 100%;
-    top: 0;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  top: 0;
 }
 
-/* PAGINA DE LANDING */
 
+
+/* LANDING PAGE */
+
+/* Tipografía personalizada */
 @font-face {
-    font-family: Neue Regrade Extrabold;
-    src: url('Fonts\Neue Regrade Extrabold.otf');
+  font-family: Neue Regrade Extrabold;
+  src: url('Fonts/Neue Regrade Extrabold.otf');
 }
 
+/* Coming Soon */
 .coming_soon {
-    position: relative;
-    font-family: Neue Regrade Extrabold;
-    width: 100%;
-    font-size: 32px;
-    margin-top: 35px;
-    color: #FF002A; /* Puedes cambiar el color del texto */
-    animation: parpadeo 0.8s infinite; /* Duración y repetición infinita */
+  position: relative;
+  font-family: Neue Regrade Extrabold;
+  width: 100%;
+  font-size: 32px;
+  margin-top: 35px;
+  color: #FF002A; 
+  animation: parpadeo 0.8s infinite; 
 }
 
 @keyframes parpadeo {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
 }
 
-
+/* Imágenes principales */
 .img-fondo {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
 }
 
 .synkit {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    margin: 4vh 0 0 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 4vh 0 0 0;
 }
 
+/* Banner 1 */
 #banner1 {
-    position: relative;
-    display: flex;
-    align-items:center;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #banner1 h1 {
-    font-size: 5vw;
-    font-family: Neue Regrade Extrabold;
-    color: #FF002A;
+  font-size: 5vw;
+  font-family: Neue Regrade Extrabold;
+  color: #FF002A;
 }
 
 #banner1 p {
-    position: relative;
-    padding-left: 1em;
-    font-size: 1.5vw;
-    text-align: justify;
-    margin-top: 30px;
-    color: #000000;
+  position: relative;
+  padding-left: 1em;
+  font-size: 1.5vw;
+  text-align: justify;
+  margin-top: 30px;
+  color: #000000;
 }
 
-#banner1 div div div {
-    display: flex;
-    flex-direction: row;
-    justify-content:center
-}
-
-.container {
-    margin: 0 auto;
-}
-
+/* Ajuste de FAQ */
 .faq {
   font-size: 7em;
   font-family: Neue Regrade Extrabold;
@@ -155,6 +160,7 @@ header {
   color: #000000;
 }
 
+/* Logo Pequeño giratorio */
 .logoPequeno {
   width: 20em;
   margin-top: 5em;
@@ -171,10 +177,12 @@ header {
   }
 }
 
+/* Imagen inferior */
 .imagenBottom {
   width: 100%;
   position: relative;
 }
+
 
 
 
